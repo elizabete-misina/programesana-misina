@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.ico')}}" />
+</head>
+
+<body>
+    <div class="page-container">
+    <header>
+        <img src="{{url_for('static', filename='images/logo.png')}}" alt="Logo" class="logo" />
+        <nav>
+            <a href="/">Sākums</a>
+            <a href="/par-mums">Par mums</a>
+        </nav>
+    </header>
+    <main class="content-wrap">
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2026 Emociju dienasgrāmata</p>
+    </footer>
+    </div>
+</body>
+
+</html>  
