@@ -1,0 +1,35 @@
+{
+	"folders": {},
+	"connections": {
+		"sqlite_jdbc-19e11d704ec-26beee45aaa033c2": {
+			"provider": "sqlite",
+			"driver": "sqlite_jdbc",
+			"name": "emociju-dienasgramata.db",
+			"save-password": true,
+			"configuration": {
+				"database": "C:\\Users\\eliza\\Documents\\programesana misina\\programesana-misina\\emociju-dienasgramata.db",
+				"url": "jdbc:sqlite:C:\\Users\\eliza\\Documents\\programesana misina\\programesana-misina\\emociju-dienasgramata.db",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true
+			}
+		}
+	},
+	"virtual-models": {"sqlite_jdbc-19e11d704ec-26beee45aaa033c2":{"@properties":{"erd.diagram.state":{"serialized":"\u003cdiagram version\u003d\"1\" name\u003d\"empty\" time\u003d\"202605101631\"\u003e\u003centities\u003e\u003cdata-source id\u003d\"sqlite_jdbc-19e11d704ec-26beee45aaa033c2\"\u003e\u003centity id\u003d\"1\" name\u003d\"categories\" fq-name\u003d\"categories\" order\u003d\"0\" x\u003d\"45\" y\u003d\"153\"/\u003e\u003centity id\u003d\"2\" name\u003d\"emotions\" fq-name\u003d\"emotions\" order\u003d\"1\" x\u003d\"198\" y\u003d\"156\"/\u003e\u003centity id\u003d\"3\" name\u003d\"visuals\" fq-name\u003d\"visuals\" order\u003d\"2\" x\u003d\"394\" y\u003d\"300\"/\u003e\u003centity id\u003d\"4\" name\u003d\"synonyms\" fq-name\u003d\"synonyms\" order\u003d\"3\" x\u003d\"397\" y\u003d\"61\"/\u003e\u003c/data-source\u003e\u003c/entities\u003e\u003crelations\u003e\u003crelation name\u003d\"emotions_categories_FK\" fq-name\u003d\"emotions.emotions_categories_FK\" type\u003d\"fk\" pk-ref\u003d\"1\" fk-ref\u003d\"2\"/\u003e\u003crelation name\u003d\"visuals_emotions_FK\" fq-name\u003d\"visuals.visuals_emotions_FK\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"3\"/\u003e\u003crelation name\u003d\"synonyms_emotions_FK\" fq-name\u003d\"synonyms.synonyms_emotions_FK\" type\u003d\"fk\" pk-ref\u003d\"2\" fk-ref\u003d\"4\"/\u003e\u003c/relations\u003e\u003c/diagram\u003e"}}}},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": true,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		}
+	}
+}
