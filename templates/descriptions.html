@@ -9,7 +9,7 @@
         <h3>{{ emotion.vards }}</h3>
         <p class="category-tag">{{ emotion.kategorija }} emocijas</p>
         <p class="description-text">{{ emotion.apraksts }}</p>
-        <div class="color-dot" style="background-color: {{ emotion.krasas_kods }};"></div>
+        <div class="color-dot" style="background-color: {{ emotion.krasas_kods }}"></div>
         <a href="{{ url_for('description_detail', emotion_id=emotion.id) }}" class="btn">Uzzināt vairāk</a>
     </div>
     {% endfor %}
