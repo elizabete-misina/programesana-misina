@@ -28,9 +28,10 @@ nav a {
     text-decoration: none;
     margin-left: 30px;
     font-weight: 500;
-    font-size: 1.1rem; 
+    font-size: 20px; 
     transition: 0.3s;
     opacity: 0.8; 
+
 }
 
 nav a:hover {
@@ -46,6 +47,17 @@ nav a:hover {
     backdrop-filter: blur(5px);
 }
 
+@media screen and (max-width: 400px) {
+    nav a {
+        font-size: 14px;
+    }
+    .nav-special {
+        padding: 1px 6px;
+        border-radius: 8px;
+        backdrop-filter: blur(5px);
+    }
+}
+
 main {
     padding: 20px;
 }
@@ -53,7 +65,7 @@ main {
 .page-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh; /*viewport height pielagojas iericem un to izmeriem*/
 }
 
 .content-wrap {
@@ -88,6 +100,113 @@ main {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* dod enu pogai */
 }
 
+.emotions-container {
+   display: flex;
+    flex-wrap: wrap;       
+    justify-content: center; 
+    gap: 25px;            
+    padding: 20px;
+    max-width: 1200px;    
+    margin: 0 auto;       
+}
+
+.emotion-card {
+    width: 30%;       
+    min-width: 280px;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.emotion-card:hover {
+    transform: translateY(-5px); 
+}
+
+.category-tag {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.detail-container ul {
+    list-style: none; 
+    padding: 0;       
+    margin: 0 auto;
+    text-align: center;
+}
+
+.detail-container li {
+    display: inline-block; 
+    margin: 5px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+
+.back-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+    border-radius: 20px; 
+    color: white !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease; 
+    backdrop-filter: blur(5px); 
+}
+
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.emotion-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 footer {
     background-color: #dba48e;
     text-align: center;
@@ -96,7 +215,7 @@ footer {
 
 
 h1 {
-    font-size: 48px;
+    font-size: 42px;
     margin-bottom: 20px;
     color: #2b2b2b;
     text-align: center;
@@ -114,22 +233,6 @@ h3 {
     margin-bottom: 20px;
     color: #2b2b2b;
     text-align: center;
-}
-
-ul {
-    list-style-type: none;
-}
-
-ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    display: block;
-    padding: 8px;
-}
-
-ul li:hover {
-    background-color: #e0e0e0;
 }
 
 img {

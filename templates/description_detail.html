@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="detail-container">
+    <!--noformat-->
+    <h1 style="color: {{ emotion.krasas_kods }}">{{ emotion.vards }}</h1>
+    <!--noformat-->
+    <div class="glass-box">
+        <h3>Kategorija: {{ emotion.kategorija }} emocijas</h3>
+        <p>{{ emotion.garaks_apraksts }}</p>
+    </div>
+
+    <h3>Sinonīmi:</h3>
+    <ul>
+        {% for s in synonyms %}
+        <li>{{ s.sinonimi }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/apraksti" class="back-button">← Atpakaļ pie saraksta</a>
+</div>
+{% endblock %}

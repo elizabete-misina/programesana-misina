@@ -1,6 +1,17 @@
 {% extends "base.html" %}
-{% block title %}Par Mums - Emociju dienasgrāmata{% endblock %}
-{% block content %} 
+{% block title %}Apraksti - Emociju dienasgrāmata{% endblock %}
+{% block content %}
 <h1>Emociju apraksti</h1>
 <h2>Emocijas, dažreiz, var būt ļoti sarežģīti izprast. Šeit ir dažādi apraksti par tām:</h2>
+<div class="emotions-container">
+    {% for emotion in emotions %}
+    <div class="emotion-card" style="border-top: 5px solid {{ emotion.krasas_kods }}">
+        <h3>{{ emotion.vards }}</h3>
+        <p class="category-tag">{{ emotion.kategorija }} emocijas</p>
+        <p class="description-text">{{ emotion.apraksts }}</p>
+        <div class="color-dot" style="background-color: {{ emotion.krasas_kods }};"></div>
+        <a href="{{ url_for('description_detail', emotion_id=emotion.id) }}" class="btn">Uzzināt vairāk</a>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

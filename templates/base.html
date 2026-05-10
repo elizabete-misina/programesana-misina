@@ -11,21 +11,21 @@
 
 <body>
     <div class="page-container">
-    <header>
-        <img src="{{url_for('static', filename='images/logo.png')}}" alt="Logo" class="logo" />
-        <nav>
-            <a href="/">Sākums</a>
-            <a href="/par-mums">Par mums</a>
-            <a href="/apraksti" class="nav-special">Emociju apraksti</a>
-        </nav>
-    </header>
-    <main class="content-wrap">
-        {% block content %}{% endblock %}
-    </main>
-    <footer>
-        <p>&copy; 2026 Emociju dienasgrāmata</p>
-    </footer>
+        <header>
+            <img src="{{url_for('static', filename='images/logo.png')}}" alt="Logo" class="logo" />
+            <nav>
+                <a href="/">Sākums</a>
+                <a href="/par-mums">Par mums</a>
+                <a href="/apraksti" class="nav-special">Emociju apraksti</a>
+            </nav>
+        </header>
+        <main class="content-wrap">
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            <p>&copy; 2026 Emociju dienasgrāmata</p>
+        </footer>
     </div>
 </body>
 
-</html>  
+</html>
