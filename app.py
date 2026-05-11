@@ -65,13 +65,13 @@ def log_mood():
         conn.execute('INSERT INTO mood_logs (emotion_id, intensity, note) VALUES (?, ?, ?)',
                      (emotion_id, intensity, note))
         conn.commit()
-        # After saving, we stay on the same page to see the new log
+        
         return redirect(url_for('log_mood'))
     
-    # GET: Fetch everything to show on the page
+    
     emotions = conn.execute('SELECT * FROM emotions').fetchall()
     
-    # Fetch logs and join with emotions to get the name and color!
+    
     logs = conn.execute('''
         SELECT mood_logs.*, emotions.vards 
         FROM mood_logs 

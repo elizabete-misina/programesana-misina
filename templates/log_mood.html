@@ -8,7 +8,7 @@
     <form action="{{ url_for('log_mood') }}" method="POST">
         <div class="form-group">
             <label>Izvēlies emociju:</label>
-            <select name="emotion_id" class="btn" style="background: rgba(255,255,255,0.1); color: black;">
+            <select name="emotion_id" class="btn">
                 {% for emotion in emotions %}
                     <option value="{{ emotion.id }}">{{ emotion.vards }}</option>
                 {% endfor %}
@@ -30,7 +30,7 @@
         <a href="{{ url_for('index') }}" style="color: white; font-size: 0.8rem;">Atpakaļ uz sākumu</a>
     </form>
 </div>
-<hr style="margin: 40px 0; border: 0; border-top: 1px solid rgba(255,255,255,0.2);">
+<hr style="margin: 40px 0; border: 0; border-top: 1px solid #ffffff33;">
 
 <h3>Tavi iepriekšējie ieraksti</h3>
 
