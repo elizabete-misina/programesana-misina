@@ -26,7 +26,7 @@ header {
 
 
 nav a {
-    margin-left: 30px; /* Atstarpe starp saitēm uz datora */
+    margin-left: 30px; 
     text-decoration: none;
     color: white;
     font-size: 20px;
@@ -52,7 +52,7 @@ nav a:hover {
     backdrop-filter: blur(5px);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
     nav {
         flex-direction: column; 
         gap: 15px;
@@ -65,7 +65,7 @@ nav a:hover {
     }
 
     nav a {
-        margin-left: 0 !important; 
+        margin-left: 0; 
         margin-bottom: 10px;       
         display: block;
     }
@@ -103,16 +103,16 @@ main {
     border-radius: 35px; 
     font-weight: bold;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px #2b2b2b;
 }
 
 .sakuma-poga:hover {
     background-color: #d4a398; 
     transform: translateY(-2px); /* pacel pogu */
-    box-shadow: 0 6px 20px #00000026; /* dod enu pogai */
+    box-shadow: 0 6px 20px #00000026; 
 }
 
-.emotions-container {
+.emotions-container { /*descriptions containers padara par flex*/
    display: flex;
     flex-wrap: wrap;       
     justify-content: center; 
@@ -122,7 +122,7 @@ main {
     margin: 0 auto;       
 }
 
-.emotion-card {
+.emotion-card { /*kartinas descriptions*/
     width: 30%;       
     min-width: 280px;
 
@@ -143,7 +143,7 @@ main {
 }
 
 .category-tag {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /*root element*/
     text-transform: uppercase;
     opacity: 0.8;
     margin-bottom: 10px;
@@ -156,7 +156,7 @@ main {
     margin-top: 10px;
 }
 
-.detail-container ul {
+.detail-container ul { /*description detail ul un li zemak*/
     list-style: none; 
     padding: 0;       
     margin: 0 auto;
@@ -189,14 +189,14 @@ main {
     transform: scale(1.05);
 }
 
-.btn {
+.btn { /*descriptions uzzinat vairak poga*/
     display: inline-block;
     margin-top: 15px;
     padding: 8px 20px;
     background: #ffffff33; 
     border: 1px solid #ffffff66; 
     border-radius: 20px; 
-    color: white !important;
+    color: white;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
@@ -212,19 +212,12 @@ main {
     color: #fff;
 }
 
-.emotion-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.form-group {
+.form-group { /*logmood forma*/
     margin-bottom: 20px;
     text-align: left; 
 }
 
-textarea {
+textarea { /*teksta ievada*/
     width: 100%;
     background: #e6e6e6;
     border: 1px solid #cccccc;
@@ -263,7 +256,7 @@ textarea {
 
 select option {
     background-color: white; 
-    color: #333;   /*man select ir pilniba balts un nelasams bez sitaa koda*/         
+    color: #333;   /*select ir pilniba balts un nelasams bez sitaa koda*/         
 }
 
 footer {
