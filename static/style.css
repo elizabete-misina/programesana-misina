@@ -207,6 +207,63 @@ main {
     text-align: center;
 }
 
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; 
+}
+
+textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-family: inherit;
+}
+
+.logs-container {
+    max-height: 500px; 
+    overflow-y: auto;
+    padding: 10px;
+}
+
+
+.logs-container .main-glass-box {
+    border-left: 4px solid rgba(255, 255, 255, 0.5); 
+}
+
+.delete-btn {
+    background: rgba(255, 100, 100, 0.2); 
+    color: white;
+    border: 1px solid rgba(255, 100, 100, 0.4);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background: rgba(255, 50, 50, 0.5);
+    transform: scale(1.05);
+}
+
+select option {
+    background-color: white; 
+    color: #333;            
+}
+
+
+select {
+    color: white; 
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 footer {
     background-color: #dba48e;
     text-align: center;

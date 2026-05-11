@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request, url_for
 import sqlite3
 from pathlib import Path
 
@@ -52,6 +52,42 @@ def description_detail(emotion_id):
         'SELECT * FROM synonyms WHERE emotion_id = ?', (emotion_id,)).fetchall()
     conn.close()
     return render_template('description_detail.html', emotion=emotion, synonyms=synonyms)
+
+@app.route('/log_mood', methods=['GET', 'POST'])
+def log_mood():
+    conn = get_db_connection()
+    
+    if request.method == 'POST':
+        emotion_id = request.form.get('emotion_id')
+        intensity = request.form.get('intensity')
+        note = request.form.get('note')
+        
+        conn.execute('INSERT INTO mood_logs (emotion_id, intensity, note) VALUES (?, ?, ?)',
+                     (emotion_id, intensity, note))
+        conn.commit()
+        # After saving, we stay on the same page to see the new log
+        return redirect(url_for('log_mood'))
+    
+    # GET: Fetch everything to show on the page
+    emotions = conn.execute('SELECT * FROM emotions').fetchall()
+    
+    # Fetch logs and join with emotions to get the name and color!
+    logs = conn.execute('''
+        SELECT mood_logs.*, emotions.vards 
+        FROM mood_logs 
+        JOIN emotions ON mood_logs.emotion_id = emotions.id
+    ''').fetchall()
+    
+    conn.close()
+    return render_template('log_mood.html', emotions=emotions, logs=logs)
+
+@app.route('/delete_log/<int:log_id>', methods=['POST'])
+def delete_log(log_id):
+    conn = get_db_connection()
+    conn.execute('DELETE FROM mood_logs WHERE id = ?', (log_id,))
+    conn.commit()
+    conn.close()
+    return redirect(url_for('log_mood'))
 
 
 @app.errorhandler(404)

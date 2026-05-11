@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Emociju fiksēšana - Emociju dienasgrāmata{% endblock %}
+{% block content %}
+<div class="main-glass-box" style="margin-top: 50px;">
+    <h2>Kā Tu šodien jūties?</h2>
+    <p>Piefiksē savas emocijas un to intensitāti.</p>
+    
+    <form action="{{ url_for('log_mood') }}" method="POST">
+        <div class="form-group">
+            <label>Izvēlies emociju:</label>
+            <select name="emotion_id" class="btn" style="background: rgba(255,255,255,0.1); color: black;">
+                {% for emotion in emotions %}
+                    <option value="{{ emotion.id }}">{{ emotion.vards }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div style="margin: 30px 0;">
+            <label>Intensitāte (1 - vāja, 10 - ļoti stipra):</label>
+            <input type="range" name="intensity" min="1" max="10" value="5" class="slider">
+        </div>
+
+        <div class="form-group">
+            <label>Piezīmes:</label>
+            <textarea name="note" placeholder="Kas izraisīja šo sajūtu?" rows="4"></textarea> <!--ieliek jautajumu textbox-->
+        </div>
+
+        <button type="submit" class="btn">Saglabāt ierakstu</button>
+        <br><br>
+        <a href="{{ url_for('index') }}" style="color: white; font-size: 0.8rem;">Atpakaļ uz sākumu</a>
+    </form>
+</div>
+<hr style="margin: 40px 0; border: 0; border-top: 1px solid rgba(255,255,255,0.2);">
+
+<h3>Tavi iepriekšējie ieraksti</h3>
+
+<div class="logs-container">
+    {% for log in logs %}
+    <div class="main-glass-box" style="margin-bottom: 15px; padding: 15px; text-align: left; position: relative;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <strong>{{ log.vards }}</strong> 
+        <span style="opacity: 0.7; font-size: 0.8rem;">{{ log.log_date }}</span>
+    </div>
+    
+    <div style="margin: 5px 0;">
+        <span>Intensitāte: <strong>{{ log.intensity }}/10</strong></span>
+    </div>
+    
+    {% if log.note %}
+        <p style="font-style: italic; margin-top: 5px;">"{{ log.note }}"</p>
+    {% endif %}
+
+    <form action="{{ url_for('delete_log', log_id=log.id) }}" method="POST" style="margin-top: 10px; text-align: right;">
+        <button type="submit" class="delete-btn" onclick="return confirm('Vai tiešām vēlies dzēst šo ierakstu?')">Dzēst</button>
+    </form>
+</div>
+    {% else %}
+        <p>Vēl nav neviena ieraksta. Sāc savu dienasgrāmatu!</p>
+    {% endfor %}
+</div>
+{% endblock %}
